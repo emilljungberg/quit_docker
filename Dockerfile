@@ -26,5 +26,8 @@ RUN git checkout -b build origin/build
 RUN export VCPKG_FORCE_SYSTEM_BINARIES=0 && \
   ./bootstrap.sh
 
+RUN mkdir /root/app
+WORKDIR /root/app
+
 # Define default command.
 ENTRYPOINT ["/root/QUIT/build/Source/qi"]
